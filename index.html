@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesa de Saberes | Consultoria para Restaurantes</title>
+<meta name="description" content="Mais de 40 anos de experiência em 4 países. Consultoria especializada em restauração.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1B4D3E">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   VARIÁVEIS DE COR (Marca Mesa de Saberes)
+   ============================================ */
+:root {
+  --verde-floresta: #1B4D3E;
+  --dourado: #D4AF37;
+  --off-white: #F5F5F0;
+  --preto: #1A1A1A;
+  --cinza-claro: #E8E8E3;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--off-white);
+  color: var(--preto);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img { max-width: 100%; height: auto; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--dourado);
+  color: var(--verde-floresta);
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--dourado);
+  cursor: pointer;
+}
+.btn:hover {
+  background: transparent;
+  color: var(--dourado);
+  transform: translateY(-3px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--dourado);
+  border: 2px solid var(--dourado);
+}
+.btn-outline:hover {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+}
+
+/* ============================================
+   HEADER & NAV
+   ============================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(27, 77, 62, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dourado);
+}
+.logo i { font-size: 32px; }
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--off-white);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nav-links a:hover { color: var(--dourado); }
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--dourado);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--verde-floresta) 0%, #0D2B1F 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('logo.png') center/300px no-repeat;
+  opacity: 0.05;
+}
+.hero-content {
+  max-width: 800px;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+.hero-logo {
+  width: 150px;
+  height: 150px;
+  background: var(--off-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  border: 4px solid var(--dourado);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.hero-logo img { width: 80%; height: 80%; object-fit: contain; }
+.hero h1 {
+  font-size: 48px;
+  color: var(--dourado);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+.hero p {
+  font-size: 20px;
+  color: var(--off-white);
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.stat {
+  text-align: center;
+}
+.stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--dourado);
+  font-family: 'Playfair Display', serif;
+}
+.stat-label {
+  font-size: 14px;
+  color: var(--off-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   SOBRE (Narrativa de Experiência)
+   ============================================ */
+.sobre {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.sobre-content h2 {
+  font-size: 36px;
+  color: var(--verde-floresta);
+  margin-bottom: 20px;
+}
+.sobre-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.sobre-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.timeline-item {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.timeline-item:hover { transform: translateY(-5px); }
+.timeline-item i {
+  font-size: 32px;
+  color: var(--dourado);
+  margin-bottom: 10px;
+}
+.timeline-item h4 {
+  font-size: 16px;
+  color: var(--verde-floresta);
+  margin-bottom: 5px;
+}
+.timeline-item p {
+  font-size: 12px;
+  color: #777;
+}
+.sobre-image {
+  position: relative;
+}
+.sobre-image img {
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   SERVIÇOS (4 Pilares)
+   ============================================ */
+.servicos {
+  padding: 100px 0;
+  background: var(--verde-floresta);
+  color: var(--off-white);
+}
+.servicos h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--dourado);
+  margin-bottom: 60px;
+}
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.servico-card {
+  background: rgba(255,255,255,0.05);
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s;
+}
+.servico-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-10px);
+  border-color: var(--dourado);
+}
+.servico-card i {
+  font-size: 48px;
+  color: var(--dourado);
+  margin-bottom: 20px;
+}
+.servico-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--dourado);
+}
+.servico-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+.servico-lista {
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+.servico-lista li {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+  list-style: none;
+}
+.servico-lista li::before {
+  content: '✓';
+  color: var(--dourado);
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* ============================================
+   PORQUE NOS ESCOLHEM
+   ============================================ */
+.porque {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+.porque h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--verde-floresta);
+  margin-bottom: 60px;
+}
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.porque-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.porque-item:hover { transform: translateX(10px); }
+.porque-item i {
+  font-size: 36px;
+  color: var(--dourado);
+  flex-shrink: 0;
+}
+.porque-item h3 {
+  font-size: 18px;
+  color: var(--verde-floresta);
+  margin-bottom: 10px;
+}
+.porque-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ============================================
+   MISSÃO
+   ============================================ */
+.missao {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--verde-floresta) 0%, #0D2B1F 100%);
+  text-align: center;
+  color: var(--off-white);
+}
+.missao h2 {
+  font-size: 32px;
+  color: var(--dourado);
+  margin-bottom: 20px;
+}
+.missao p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.8;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+.contacto {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+.contacto h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--verde-floresta);
+  margin-bottom: 60px;
+}
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+.contacto-info h3 {
+  font-size: 24px;
+  color: var(--verde-floresta);
+  margin-bottom: 20px;
+}
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.contacto-item i {
+  width: 50px;
+  height: 50px;
+  background: var(--verde-floresta);
+  color: var(--dourado);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.contacto-item p {
+  font-size: 15px;
+  color: #555;
+}
+.contacto-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--verde-floresta);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--cinza-claro);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dourado);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.substack {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--cinza-claro);
+}
+.substack h4 {
+  font-size: 16px;
+  color: var(--verde-floresta);
+  margin-bottom: 15px;
+}
+.substack-form {
+  display: flex;
+  gap: 10px;
+}
+.substack-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--cinza-claro);
+  border-radius: 50px;
+  font-size: 14px;
+}
+.substack-form button {
+  padding: 12px 24px;
+  background: var(--verde-floresta);
+  color: var(--dourado);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.substack-form button:hover {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--verde-floresta);
+  color: var(--off-white);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: var(--dourado);
+  margin-bottom: 20px;
+}
+.footer-col p {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.footer-col ul li a:hover {
+  color: var(--dourado);
+  opacity: 1;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dourado);
+  transition: 0.3s;
+}
+.social-links a:hover {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+@media (max-width: 1024px) {
+  .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; }
+  .hero-stats { gap: 20px; }
+  .stat-number { font-size: 32px; }
+  .sobre-grid { grid-template-columns: 1fr; }
+  .sobre-timeline { grid-template-columns: repeat(2, 1fr); }
+  .servicos-grid { grid-template-columns: 1fr; }
+  .porque-grid { grid-template-columns: 1fr; }
+  .contacto-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .substack-form { flex-direction: column; }
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <span>Mesa de Saberes</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#porque">Porquê</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="logo.png" alt="Mesa de Saberes Logo">
+    </div>
+    <h1>Sabores + Design + IA</h1>
+    <p>Transformamos restaurantes em negócios sustentáveis, rentáveis e memoráveis</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Anos de Experiência</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Países</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">360°</div>
+        <div class="stat-label">Abordagem</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn">Consultoria Grátis</a>
+      <a href="#servicos" class="btn btn-outline">Nossos Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-content">
+        <h2>40 Anos de Excelência Gastronómica</h2>
+        <p>A Mesa de Saberes é uma consultoria especializada no setor da restauração. Com presença consolidada em Portugal, Espanha, França e Brasil, reunimos mais de 40 anos de experiência em todas as áreas críticas do negócio.</p>
+        <p>Desde a imagem e identidade visual até à gestão operacional, formação e desenvolvimento de equipas — transformamos restaurantes em negócios de sucesso.</p>
+        <a href="#contacto" class="btn">Saiba Mais</a>
+      </div>
+      <div class="sobre-timeline">
+        <div class="timeline-item">
+          <i class="fas fa-flag"></i>
+          <h4>Portugal</h4>
+          <p>Mercado Principal</p>
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-flag"></i>
+          <h4>Espanha</h4>
+          <p>Expansão</p>
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-flag"></i>
+          <h4>França</h4>
+          <p>Gastronomia</p>
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-flag"></i>
+          <h4>Brasil</h4>
+          <p>Mercado Emergente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="container">
+    <h2>Os 4 Pilares Estratégicos</h2>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Operação & Gestão</h3>
+        <p>Otimização completa do seu restaurante</p>
+        <ul class="servico-lista">
+          <li>Estudo de mercado personalizado</li>
+          <li>Criação de ementas adaptadas</li>
+          <li>Fichas técnicas de produtos</li>
+          <li>Análise interna de falhas</li>
+        </ul>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Imagem & Branding</h3>
+        <p>Identidade visual coerente e impactante</p>
+        <ul class="servico-lista">
+          <li>Desenvolvimento de logo</li>
+          <li>Identidade visual completa</li>
+          <li>Design de menus</li>
+          <li>Branding digital</li>
+        </ul>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-users"></i>
+        <h3>Formação & Equipas</h3>
+        <p>Capacitamos as equipas para excelência</p>
+        <ul class="servico-lista">
+          <li>Formação contínua sala</li>
+          <li>Formação contínua cozinha</li>
+          <li>Desenvolvimento de lideranças</li>
+          <li>Cultura de excelência</li>
+        </ul>
+      </div>
+      <div class="servico-card">
+        <i class="fas fa-robot"></i>
+        <h3>IA & Inovação</h3>
+        <p>Tecnologia para o futuro da restauração</p>
+        <ul class="servico-lista">
+          <li>Websites e apps</li>
+          <li>Redes sociais</li>
+          <li>Automação com IA</li>
+          <li>Produtos digitais</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORQUE NOS ESCOLHEM -->
+<section class="porque" id="porque">
+  <div class="container">
+    <h2>Porque Nos Escolhem</h2>
+    <div class="porque-grid">
+      <div class="porque-item">
+        <i class="fas fa-gift"></i>
+        <div>
+          <h3>Primeira Consultoria Grátis</h3>
+          <p>Sem compromisso. Avaliamos o seu negócio e apresentamos soluções personalizadas sem qualquer custo inicial.</p>
+        </div>
+      </div>
+      <div class="porque-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <h3>Experiência Comprovada</h3>
+          <p>Mais de 40 anos em diversos mercados e culturas gastronómicas. Conhecimento que faz a diferença.</p>
+        </div>
+      </div>
+      <div class="porque-item">
+        <i class="fas fa-sync"></i>
+        <div>
+          <h3>Abordagem 360º</h3>
+          <p>Desde a imagem até à operação diária. Cuidamos de todos os detalhes para o seu sucesso.</p>
+        </div>
+      </div>
+      <div class="porque-item">
+        <i class="fas fa-graduation-cap"></i>
+        <div>
+          <h3>Formação à Medida</h3>
+          <p>Capacitamos as equipas para excelência. Programas personalizados para sala e cozinha.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO -->
+<section class="missao">
+  <div class="container">
+    <h2>Nossa Missão</h2>
+    <p>Transformar restaurantes em negócios sustentáveis, rentáveis e memoráveis – através do conhecimento, da imagem e da formação.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="container">
+    <h2>Vamos Conversar?</h2>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h3>Entre em Contacto</h3>
+        <div class="contacto-item">
+          <i class="fas fa-envelope"></i>
+          <p>mesadesaberes@gmail.com</p>
+        </div>
+        <div class="contacto-item">
+          <i class="fas fa-phone"></i>
+          <p>+351 96 155 62 15</p>
+        </div>
+        <div class="contacto-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Portugal (Atuação Internacional)</p>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" required placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required placeholder="Seu email">
+          </div>
+          <div class="form-group">
+            <label>Restaurante/Empresa</label>
+            <input type="text" placeholder="Nome do estabelecimento">
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea required placeholder="Como podemos ajudar?"></textarea>
+          </div>
+          <button type="submit" class="btn" style="width:100%">Enviar Mensagem</button>
+        </form>
+        <div class="substack">
+          <h4>📧 Subscreva a Nossa Newsletter</h4>
+          <form class="substack-form" action="https://substack.com/api/subscribe" method="POST">
+            <input type="email" placeholder="Seu email" required>
+            <button type="submit">Subscrever</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Mesa de Saberes</h4>
+        <p>Consultoria especializada em restauração com mais de 40 anos de experiência internacional.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li>Operação & Gestão</li>
+          <li>Imagem & Branding</li>
+          <li>Formação & Equipas</li>
+          <li>IA & Inovação</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mesa de Saberes. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  navLinks.style.flexDirection = 'column';
+  navLinks.style.position = 'absolute';
+  navLinks.style.top = '100%';
+  navLinks.style.left = '0';
+  navLinks.style.width = '100%';
+  navLinks.style.background = '#1B4D3E';
+  navLinks.style.padding = '20px';
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navLinks.style.display = '';
+    }
+  });
+});
+
+// Contact Form Handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('✅ Obrigado pela sua mensagem! Entraremos em contacto em breve.');
+  this.reset();
+});
+
+// Header Scroll Effect
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if(window.scrollY > 100) {
+    header.style.background = 'rgba(27, 77, 62, 1)';
+  } else {
+    header.style.background = 'rgba(27, 77, 62, 0.95)';
+  }
+});
+</script>
+</body>
+</html>
