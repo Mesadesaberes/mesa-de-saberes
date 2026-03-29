@@ -431,6 +431,59 @@ nav {
   border: 0;
 }
 
+/* CLIENTES & PARTNERS CAROUSEL */
+.clientes {
+  padding: 80px 0;
+  background: var(--off-white);
+  overflow: hidden;
+}
+.clientes .section-title {
+  margin-bottom: 40px;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.cliente-logo {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 100px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+.cliente-logo:hover {
+  transform: scale(1.08);
+  border-color: var(--dourado);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+.cliente-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 /* MISSÃO */
 .missao {
   padding: 100px 0;
@@ -649,6 +702,8 @@ footer {
 @media (max-width: 1024px) {
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .carousel-track { gap: 30px; }
+  .cliente-logo { width: 150px; height: 90px; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -668,6 +723,8 @@ footer {
   .logo-img { width: 35px; height: 35px; }
   .hero-logo { width: 130px; height: 130px; }
   .video-container { max-width: 100%; }
+  .carousel-track { gap: 20px; animation-duration: 20s; }
+  .cliente-logo { width: 130px; height: 80px; }
 }
 
 /* ANIMAÇÕES */
@@ -698,6 +755,7 @@ footer {
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#porque">Porquê</a></li>
+        <li><a href="#clientes">Clientes</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button class="mobile-menu-btn">
@@ -888,6 +946,41 @@ footer {
   </div>
 </section>
 
+<!-- CLIENTES & PARTNERS CAROUSEL -->
+<section class="clientes" id="clientes">
+  <div class="container">
+    <h2 class="section-title">Clientes & Partners</h2>
+    <p style="text-align:center; color:#666; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
+      Orgulhamo-nos de colaborar com marcas de excelência na restauração
+    </p>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Logos duplicados para scroll infinito -->
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
+        
+        <!-- Duplicar logos para scroll infinito -->
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
+        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MISSÃO -->
 <section class="missao">
   <div class="container">
@@ -971,6 +1064,7 @@ footer {
           <li><a href="#hero">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#clientes">Clientes</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
