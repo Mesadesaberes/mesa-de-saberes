@@ -85,11 +85,13 @@ nav {
   font-weight: 700;
   color: var(--dourado);
 }
-.logo img { 
-  width: 45px; 
-  height: 45px; 
+.logo-img {
+  width: 45px;
+  height: 45px;
   object-fit: contain;
   border-radius: 50%;
+  background: var(--off-white);
+  padding: 3px;
 }
 .nav-links {
   display: flex;
@@ -142,8 +144,8 @@ nav {
   animation: fadeInUp 1s ease-out;
 }
 .hero-logo {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   background: var(--off-white);
   border-radius: 50%;
   display: flex;
@@ -153,8 +155,13 @@ nav {
   border: 4px solid var(--dourado);
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   overflow: hidden;
+  padding: 8px;
 }
-.hero-logo img { width: 85%; height: 85%; object-fit: contain; }
+.hero-logo img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain;
+}
 .hero h1 {
   font-size: 48px;
   color: var(--dourado);
@@ -194,7 +201,51 @@ nav {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
+
+/* Social Links Hero */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.hero-social a {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dourado);
+  font-size: 18px;
+  transition: 0.3s;
+}
+.hero-social a:hover {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+  transform: translateY(-3px);
+}
+
+/* Blog Highlight */
+.blog-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(212, 175, 55, 0.2);
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.blog-highlight i { color: var(--dourado); }
+.blog-highlight a {
+  color: var(--off-white);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.blog-highlight a:hover { color: var(--dourado); }
 
 /* SOBRE */
 .sobre {
@@ -351,6 +402,35 @@ nav {
   line-height: 1.7;
 }
 
+/* Video Section */
+.video-section {
+  margin-top: 60px;
+  text-align: center;
+}
+.video-section h3 {
+  font-size: 24px;
+  color: var(--verde-floresta);
+  margin-bottom: 25px;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* MISSÃO */
 .missao {
   padding: 100px 0;
@@ -409,8 +489,9 @@ nav {
 }
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 .social-links a {
   width: 45px;
@@ -534,6 +615,28 @@ footer {
   color: var(--dourado);
   opacity: 1;
 }
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dourado);
+  font-size: 16px;
+  transition: 0.3s;
+}
+.footer-social a:hover {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+}
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
@@ -562,7 +665,9 @@ footer {
   .substack-form { flex-direction: column; }
   .section-title { font-size: 32px; }
   .logo { font-size: 18px; }
-  .logo img { width: 35px; height: 35px; }
+  .logo-img { width: 35px; height: 35px; }
+  .hero-logo { width: 130px; height: 130px; }
+  .video-container { max-width: 100%; }
 }
 
 /* ANIMAÇÕES */
@@ -585,7 +690,7 @@ footer {
   <div class="container">
     <nav>
       <div class="logo">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg" alt="Mesa de Saberes">
+        <img class="logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg" alt="Mesa de Saberes">
         <span>Mesa de Saberes</span>
       </div>
       <ul class="nav-links">
@@ -627,6 +732,23 @@ footer {
     <div class="hero-cta">
       <a href="#contacto" class="btn">Consultoria Grátis</a>
       <a href="#servicos" class="btn btn-outline">Nossos Serviços</a>
+    </div>
+    
+    <!-- Blog Highlight -->
+    <div class="blog-highlight">
+      <i class="fas fa-rss"></i>
+      <span>Leia o nosso blog:</span>
+      <a href="https://substack.com/@mesadesaberes" target="_blank">Mesa de Saberes no Substack</a>
+    </div>
+    
+    <!-- Social Links Hero -->
+    <div class="hero-social">
+      <a href="https://pt.pinterest.com/mdesaberes/" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+      <a href="https://x.com/saberes51414" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/mesadesaberes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/mesadesaberes" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/mesadesaberes/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/@MesadeSaberes" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
   </div>
 </section>
@@ -716,7 +838,7 @@ footer {
   </div>
 </section>
 
-<!-- PORQUE -->
+<!-- PORQUE + VÍDEO -->
 <section class="porque" id="porque">
   <div class="container">
     <h2 class="section-title">Porque Nos Escolhem</h2>
@@ -750,6 +872,19 @@ footer {
         </div>
       </div>
     </div>
+    
+    <!-- YouTube Video -->
+    <div class="video-section">
+      <h3>🎬 Conheça a Mesa de Saberes</h3>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/26eVez2OisM?si=wPITXz6CPg0ePtr2" 
+          title="Mesa de Saberes - Vídeo Explicativo" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -781,9 +916,13 @@ footer {
           <p>Portugal (Atuação Internacional)</p>
         </div>
         <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://pt.pinterest.com/mdesaberes/" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+          <a href="https://x.com/saberes51414" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/mesadesaberes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/mesadesaberes" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/mesadesaberes/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@MesadeSaberes" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://substack.com/@mesadesaberes" target="_blank" title="Blog"><i class="fas fa-rss"></i></a>
         </div>
       </div>
       <div class="contacto-form">
@@ -836,13 +975,15 @@ footer {
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Serviços</h4>
-        <ul>
-          <li>Operação & Gestão</li>
-          <li>Imagem & Branding</li>
-          <li>Formação & Equipas</li>
-          <li>IA & Inovação</li>
-        </ul>
+        <h4>Siga-nos</h4>
+        <div class="footer-social">
+          <a href="https://pt.pinterest.com/mdesaberes/" target="_blank"><i class="fab fa-pinterest"></i></a>
+          <a href="https://x.com/saberes51414" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/mesadesaberes/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/mesadesaberes" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/mesadesaberes/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@MesadeSaberes" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
