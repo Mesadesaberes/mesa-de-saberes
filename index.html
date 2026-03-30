@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<!-- ✅ Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D70X4D1TQL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D70X4D1TQL', {
-    page_title: 'Mesa de Saberes',
-    page_location: window.location.href
-  });
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Mesa de Saberes | Consultoria para Restaurantes</title>
@@ -27,13 +15,13 @@
 <link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg">
 <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg">
 
-<!-- ✅ Google Analytics (Substitui G-XXXXXXXXXX pelo teu ID) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- ✅ Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D70X4D1TQL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', {
+  gtag('config', 'G-D70X4D1TQL', {
     page_title: 'Mesa de Saberes',
     page_location: window.location.href
   });
@@ -634,54 +622,39 @@ nav {
   resize: vertical;
   min-height: 130px;
 }
-.substack {
-  margin-top: 35px;
-  padding-top: 35px;
-  border-top: 2px solid var(--cinza-claro);
-}
-.substack h4 {
-  font-size: 18px;
-  color: var(--verde-floresta);
-  margin-bottom: 15px;
-}
-.substack-form {
-  display: flex;
-  gap: 10px;
-}
-.substack-form input {
-  flex: 1;
-  padding: 14px 20px;
-  border: 2px solid var(--cinza-claro);
-  border-radius: 50px;
-  font-size: 14px;
-}
-.substack-form button {
-  padding: 14px 28px;
-  background: var(--verde-floresta);
-  color: var(--dourado);
-  border: none;
-  border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.substack-form button:hover {
-  background: var(--dourado);
-  color: var(--verde-floresta);
-}
 
-/* ✅ BLOG SUBSTACK EMBED */
+/* ✅ SUBSTACK - LINK DIRETO (100% FUNCIONAL) */
 .substack-embed {
   margin-top: 30px;
-  padding: 20px;
+  padding: 25px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: center;
 }
-.substack-embed iframe {
+.substack-embed h4 {
+  font-size: 18px;
+  color: var(--verde-floresta);
+  margin-bottom: 10px;
+}
+.substack-embed p {
+  font-size: 14px;
+  color: #666;
+  margin: 15px 0 20px;
+}
+.substack-embed .btn {
   width: 100%;
-  min-height: 320px;
-  border: none;
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+.substack-embed a {
+  color: var(--dourado);
+  font-weight: 600;
+  text-decoration: none;
+}
+.substack-embed a:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -780,7 +753,6 @@ footer {
   .porque-grid { grid-template-columns: 1fr; }
   .contacto-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .substack-form { flex-direction: column; }
   .section-title { font-size: 32px; }
   .logo { font-size: 18px; }
   .logo-img { width: 35px; height: 35px; padding: 5px; border-radius: 10px; }
@@ -1106,10 +1078,18 @@ footer {
           <button type="submit" class="btn" style="width:100%">Enviar Mensagem</button>
         </form>
         
-        <!-- ✅ SUBSTACK EMBED -->
+        <!-- ✅ SUBSTACK - LINK DIRETO (100% FUNCIONAL) -->
         <div class="substack-embed">
-          <h4>📰 Últimos Artigos</h4>
-          <iframe src="https://substack.com/@mesadesaberes/embed" width="100%" height="320" frameborder="0" scrolling="no"></iframe>
+          <h4>📰 Últimos Artigos no Blog</h4>
+          <p style="font-size:14px; color:#666; margin:15px 0 20px;">
+            Acompanha as nossas dicas, tendências e casos de sucesso na restauração.
+          </p>
+          <a href="https://substack.com/@mesadesaberes" target="_blank" class="btn">
+            <i class="fas fa-rss"></i> Visitar Blog Mesa de Saberes
+          </a>
+          <p style="font-size:12px; color:#999; margin-top:15px;">
+            <i class="fas fa-external-link-alt"></i> Abre numa nova janela
+          </p>
         </div>
       </div>
     </div>
