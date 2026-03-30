@@ -2,12 +2,35 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Mesa de Saberes | Consultoria para Restaurantes</title>
 <meta name="description" content="Mais de 40 anos de experiência em 4 países. Consultoria especializada em restauração.">
+
+<!-- ✅ PWA: Manifest e Meta Tags -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1B4D3E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mesa de Saberes">
+<link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg">
 <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg">
+
+<!-- ✅ Google Analytics (Substitui G-XXXXXXXXXX pelo teu ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    page_title: 'Mesa de Saberes',
+    page_location: window.location.href
+  });
+</script>
+
+<!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --verde-floresta: #1B4D3E;
@@ -85,18 +108,15 @@ nav {
   font-weight: 700;
   color: var(--dourado);
 }
-
-/* ✅ LOGO QUADRADO ARREDONDADO (HEADER) */
 .logo-img {
   width: 45px;
   height: 45px;
   object-fit: cover;
-  border-radius: 12px; /* Quadrado arredondado */
+  border-radius: 12px;
   background: var(--off-white);
   padding: 6px;
   display: block;
 }
-
 .nav-links {
   display: flex;
   gap: 30px;
@@ -147,13 +167,11 @@ nav {
   z-index: 1;
   animation: fadeInUp 1s ease-out;
 }
-
-/* ✅ LOGO QUADRADO ARREDONDADO (HERO) */
 .hero-logo {
   width: 160px;
   height: 160px;
   background: var(--off-white);
-  border-radius: 20px; /* Quadrado arredondado */
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,11 +184,10 @@ nav {
 .hero-logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Preenche sem espaços */
+  object-fit: cover;
   display: block;
   border-radius: 16px;
 }
-
 .hero h1 {
   font-size: 48px;
   color: var(--dourado);
@@ -641,6 +658,20 @@ nav {
   color: var(--verde-floresta);
 }
 
+/* ✅ BLOG SUBSTACK EMBED */
+.substack-embed {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+.substack-embed iframe {
+  width: 100%;
+  min-height: 320px;
+  border: none;
+}
+
 /* FOOTER */
 footer {
   background: var(--verde-floresta);
@@ -707,6 +738,17 @@ footer {
   opacity: 0.7;
 }
 
+/* ✅ ANIMAÇÕES SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* RESPONSIVO */
 @media (max-width: 1024px) {
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -739,14 +781,8 @@ footer {
 
 /* ANIMAÇÕES */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -826,29 +862,29 @@ footer {
 </section>
 
 <!-- SOBRE -->
-<section class="sobre" id="sobre">
+<section class="sobre reveal" id="sobre">
   <div class="container">
     <h2 class="section-title">Quem Somos</h2>
     <div class="sobre-content">
       <p>A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.</p>
     </div>
     <div class="sobre-timeline">
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
         <h4>Portugal</h4>
         <p>Mercado Principal</p>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
         <h4>Espanha</h4>
         <p>Expansão</p>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
         <h4>França</h4>
         <p>Gastronomia</p>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
         <h4>Brasil</h4>
         <p>Mercado Emergente</p>
@@ -858,11 +894,11 @@ footer {
 </section>
 
 <!-- SERVIÇOS -->
-<section class="servicos" id="servicos">
+<section class="servicos reveal" id="servicos">
   <div class="container">
     <h2 class="section-title">O Que Fazemos</h2>
     <div class="servicos-grid">
-      <div class="servico-card">
+      <div class="servico-card reveal">
         <i class="fas fa-chart-line"></i>
         <h3>Operação & Gestão</h3>
         <p>Otimização completa do seu restaurante</p>
@@ -873,7 +909,7 @@ footer {
           <li>Análise interna de falhas</li>
         </ul>
       </div>
-      <div class="servico-card">
+      <div class="servico-card reveal">
         <i class="fas fa-paint-brush"></i>
         <h3>Imagem & Branding</h3>
         <p>Identidade visual coerente e impactante</p>
@@ -884,7 +920,7 @@ footer {
           <li>Branding digital</li>
         </ul>
       </div>
-      <div class="servico-card">
+      <div class="servico-card reveal">
         <i class="fas fa-users"></i>
         <h3>Formação & Equipas</h3>
         <p>Capacitamos as equipas para excelência</p>
@@ -895,7 +931,7 @@ footer {
           <li>Cultura de excelência</li>
         </ul>
       </div>
-      <div class="servico-card">
+      <div class="servico-card reveal">
         <i class="fas fa-robot"></i>
         <h3>IA & Inovação</h3>
         <p>Tecnologia para o futuro da restauração</p>
@@ -911,32 +947,32 @@ footer {
 </section>
 
 <!-- PORQUE + VÍDEO -->
-<section class="porque" id="porque">
+<section class="porque reveal" id="porque">
   <div class="container">
     <h2 class="section-title">Porque Nos Escolhem</h2>
     <div class="porque-grid">
-      <div class="porque-item">
+      <div class="porque-item reveal">
         <i class="fas fa-gift"></i>
         <div>
           <h3>Primeira Consultoria Grátis</h3>
           <p>Sem compromisso. Avaliamos o seu negócio e apresentamos soluções personalizadas sem qualquer custo inicial.</p>
         </div>
       </div>
-      <div class="porque-item">
+      <div class="porque-item reveal">
         <i class="fas fa-award"></i>
         <div>
           <h3>Experiência Comprovada</h3>
           <p>Mais de 40 anos em diversos mercados e culturas gastronómicas. Conhecimento que faz a diferença.</p>
         </div>
       </div>
-      <div class="porque-item">
+      <div class="porque-item reveal">
         <i class="fas fa-sync"></i>
         <div>
           <h3>Abordagem 360º</h3>
           <p>Desde a imagem até à operação diária. Cuidamos de todos os detalhes para o seu sucesso.</p>
         </div>
       </div>
-      <div class="porque-item">
+      <div class="porque-item reveal">
         <i class="fas fa-graduation-cap"></i>
         <div>
           <h3>Formação à Medida</h3>
@@ -946,7 +982,7 @@ footer {
     </div>
     
     <!-- YouTube Video -->
-    <div class="video-section">
+    <div class="video-section reveal">
       <h3>🎬 Conheça a Mesa de Saberes</h3>
       <div class="video-container">
         <iframe 
@@ -961,7 +997,7 @@ footer {
 </section>
 
 <!-- CLIENTES & PARTNERS CAROUSEL -->
-<section class="clientes" id="clientes">
+<section class="clientes reveal" id="clientes">
   <div class="container">
     <h2 class="section-title">Clientes & Partners</h2>
     <p style="text-align:center; color:#666; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
@@ -970,33 +1006,33 @@ footer {
     <div class="carousel-container">
       <div class="carousel-track">
         <!-- Logos duplicados para scroll infinito -->
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
         
         <!-- Duplicar logos para scroll infinito -->
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
-        <div class="cliente-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3BMmeqybQK59lYV38LhFvdWM-1HHH1TuzhUGswNVJLnGisZCkbT9Qa8I5UmqKMYNnru_FIXgEf-bDRALiIOYsOPcgfeURbMEvaMVPZ3ZBGEOgVCqgEb8j8V4ziN1-_KsCqgUZ8O8qDqLQmVogi5hX3aLkFexfhERi-oVGuGbCuJReb7I16LOSMqmWO2s/s320/Vilamoura%20Select%20Logo.jpeg" alt="Vilamoura Select"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44O1jwwd9B2XR3flVOF0HTuKr1LZFRAjvsYnDd0VJqnwwA1fglkOXjMmowiymtJ8fyuPK4wXwQG5Q1HHVmLYmxqym12yk1AeG8K2oQCEeYzX_QB8U4rr5eEthfTwLYC484ljFbMDWMPjPWvZOPGlUxlGHUq4VgUQX_N_cmGJPg_lSovBQCGh-YJbo8x0/s320/Logo%20Bravo%20transparent.png" alt="Bravo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh20PsfaJCbFmjXYTcVx4zybZvKm2qVbP_cgmhXMzTkGr8pkkjlJMLe4cLQJoguYNhJynTHTWG5N9CL8qf6uq-RXUYqvpaJgcswb8Y-HZDNLztuknZctdtpQFvmztHUhW4Bipn4poZegeLAWkscFh4759-88LzBVnom6yMokcWB45DXTArBCE-iB2G4i_E/s320/Central%20Vilamoura_square.jpg" alt="Central Vilamoura"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI735nGzLs58FGF_QDJXMibtEWUe6qdbZgtlpg0r9HHzTHGry6xtU1YWkJzZBDXWDeWxfxLOjPyp6Kofve1smMwozjy2tr4bVJaUPOZwXHlCbuSOyniSuqvsbRaSU2hJ0zQFBPpcpksx5UrKlxQwNhLphdQGxp-S_o2TIjkwmoN_Cr4yEGEz-1_FkPMdg/s320/Logo%20Colombo_colour.jpg" alt="Colombo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJEoWjrKH3d18wzmkmdcdj2jNBvPhSsuIDnhtNYvSg8fZgn4y7HSRppZENUuof79ViJzCv1SWpxCvnPUUavelellDB0cXr49kU84XU1yw-gPGWcHna7PaVfBXK3nJfetC65w0ShZe1EJk9rywCmCKaiv4CwpavLB20DXQXkfTfoOMQAbWs8rBtIgvuJmU/s320/Logo%20marco%20polo%20Final%20retangulo.png" alt="Marco Polo"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhup3qEh-QnqiaswfQxPrJViWugbbTTPnwHhfHCy-YLGcLSiLlfW0Q7aBdmUosrBZ7SAgLoyFm62Y72zq0dNwRrc8DZ9zUJ2UgFs2UgryJITEctgmU9iW0M-PCR_VvHzOa5pDty9S7u8IKXAu5Se8aOs_hxuVEZkHNwPH0yjj7LvZPuJEM6jgdfOMpVhtU/s320/LOGO_BLOOM_upscale.jpg" alt="Bloom"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRiN2kHEbGI8W6UUK5sRE3r1_DmgcJKxvhN4ybyaiOFZRuG1PLLpsPRzTpWFCkTdMgqSc71tPzkubDXSVNOOAD8U-OBWMGsTlmBRyhbBf29s1HeCNLWAeyIvyw6leJD4i431qhfdvAZ-4O8fVF-rTBtpRENC7W6J_QyrhloVeiWxjEnY7U21aLJWWdUmo/s320/Thai%20Vilamoura_logo.jpg" alt="Thai Vilamoura"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC5AGwvcJ2LqtHDojF9yFkvpS5PpcN6wUCeUrQIPpX7Jdfp5krBAHfoW3ZrEgcyi9NnAR30GbL2p34B39Iahj6mPoOWfqosaNciQ8mGBVr8RMz08ILe0Dk2rROkjQ5cKk8c3Zw5YE48icaWwUu_PX8g9Bf6-dVxrjUrdj0bFWZcgGswQuwTi-7v2a6AyE/s1600/Logo%20Luna%20Rossa.png" alt="Luna Rossa"></div>
+        <div class="cliente-logo reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivwJj0tBTDm-YBOYk4CxArHcDxMTME7KAykbfN_HoKHPmsRNvdC443Ft0ISVs5JYPy8nPXx9LeUm0FsiP1KVq17Ha85nzO13DNaKolGtk8waAEiDH18zjn4dNgdHSQ2vO_5o0V1cUp87L0WbGXyP2kCzf71TqIqVQSSYy0JKmiBCLq1UtxzXCs_Xu7O_g/s320/Logo%20sr%20Frango.jpg" alt="Sr. Frango"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- MISSÃO -->
-<section class="missao">
+<section class="missao reveal">
   <div class="container">
     <h2>Nossa Missão</h2>
     <p>Transformar restaurantes em negócios sustentáveis, rentáveis e memoráveis – através do conhecimento, da imagem e da formação.</p>
@@ -1004,7 +1040,7 @@ footer {
 </section>
 
 <!-- CONTACTO -->
-<section class="contacto" id="contacto">
+<section class="contacto reveal" id="contacto">
   <div class="container">
     <h2 class="section-title">Contactos</h2>
     <div class="contacto-grid">
@@ -1037,31 +1073,31 @@ footer {
         </div>
       </div>
       <div class="contacto-form">
-        <form id="contactForm">
+        <!-- ✅ FORMULÁRIO FUNCIONAL COM FORMSPREE -->
+        <form action="https://formspree.io/f/xgopkpvd" method="POST">
           <div class="form-group">
             <label>Nome</label>
-            <input type="text" required placeholder="Seu nome">
+            <input type="text" name="name" required placeholder="Seu nome">
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" required placeholder="Seu email">
+            <input type="email" name="email" required placeholder="Seu email">
           </div>
           <div class="form-group">
             <label>Restaurante/Empresa</label>
-            <input type="text" placeholder="Nome do estabelecimento">
+            <input type="text" name="empresa" placeholder="Nome do estabelecimento">
           </div>
           <div class="form-group">
             <label>Mensagem</label>
-            <textarea required placeholder="Como podemos ajudar?"></textarea>
+            <textarea name="message" required placeholder="Como podemos ajudar?"></textarea>
           </div>
           <button type="submit" class="btn" style="width:100%">Enviar Mensagem</button>
         </form>
-        <div class="substack">
-          <h4>📧 Subscreva a Nossa Newsletter</h4>
-          <form class="substack-form">
-            <input type="email" placeholder="Seu email" required>
-            <button type="submit">Subscrever</button>
-          </form>
+        
+        <!-- ✅ SUBSTACK EMBED -->
+        <div class="substack-embed">
+          <h4>📰 Últimos Artigos</h4>
+          <iframe src="https://substack.com/@mesadesaberes/embed" width="100%" height="320" frameborder="0" scrolling="no"></iframe>
         </div>
       </div>
     </div>
@@ -1109,6 +1145,22 @@ footer {
 </footer>
 
 <script>
+// ✅ SCROLL REVEAL ANIMATION
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  revealElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
 // Mobile Menu
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
@@ -1136,12 +1188,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Contact Form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('✅ Obrigado pela sua mensagem! Entraremos em contacto em breve.');
-  this.reset();
-});
+// ✅ PWA: Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('✅ Service Worker registado!', reg.scope))
+      .catch(err => console.log('❌ Erro no Service Worker:', err));
+  });
+}
 
 // Header Scroll
 window.addEventListener('scroll', () => {
