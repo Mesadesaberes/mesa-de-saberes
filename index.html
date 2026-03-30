@@ -324,35 +324,27 @@ nav {
   line-height: 1.9;
 }
 .sobre-timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-top: 60px;
-}
-.timeline-item {
-  text-align: center;
-  padding: 30px 20px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-  border-bottom: 4px solid var(--dourado);
-}
-.timeline-item:hover { transform: translateY(-8px); box-shadow: 0 10px 35px rgba(0,0,0,0.15); }
-.timeline-item i {
-  font-size: 36px;
-  color: var(--dourado);
-  margin-bottom: 15px;
-}
-.timeline-item h4 {
-  font-size: 18px;
-  color: var(--verde-floresta);
-  margin-bottom: 8px;
-}
-.timeline-item p {
-  font-size: 13px;
-  color: #777;
-}
+ <div class="timeline-item reveal">
+    <i class="fas fa-flag"></i>
+    <h4 data-i18n="country_pt">Portugal</h4>
+    <p data-i18n="country_pt_desc">Mercado Principal</p>
+  </div>
+  <div class="timeline-item reveal">
+    <i class="fas fa-flag"></i>
+    <h4 data-i18n="country_es">Espanha</h4>
+    <p data-i18n="country_es_desc">Expansão</p>
+  </div>
+  <div class="timeline-item reveal">
+    <i class="fas fa-flag"></i>
+    <h4 data-i18n="country_de">Alemanha</h4>
+    <p data-i18n="country_de_desc">Experiência Internacional</p>
+  </div>
+  <div class="timeline-item reveal">
+    <i class="fas fa-flag"></i>
+    <h4 data-i18n="country_uk">Inglaterra</h4>
+    <p data-i18n="country_uk_desc">Mercado Europeu</p>
+  </div>
+</div>
 
 /* SERVIÇOS */
 .servicos {
