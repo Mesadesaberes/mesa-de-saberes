@@ -1,0 +1,21 @@
+{
+  "name": "Mesa de Saberes",
+  "short_name": "MesaSaberes",
+  "description": "Consultoria para Restaurantes - Mais de 40 anos de experiência",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F5F0",
+  "theme_color": "#1B4D3E",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
