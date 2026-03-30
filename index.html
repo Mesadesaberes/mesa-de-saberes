@@ -117,10 +117,38 @@ nav {
   padding: 6px;
   display: block;
 }
+
+/* ✅ LANGUAGE SWITCHER */
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.lang-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--off-white);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.lang-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+.lang-btn.active {
+  background: var(--dourado);
+  color: var(--verde-floresta);
+  border-color: var(--dourado);
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
+  align-items: center;
 }
 .nav-links a {
   color: var(--off-white);
@@ -761,6 +789,7 @@ footer {
   .video-container { max-width: 100%; }
   .carousel-track { gap: 20px; animation-duration: 20s; }
   .cliente-logo { width: 130px; height: 80px; }
+  .lang-switcher { position: absolute; top: 70px; right: 20px; }
 }
 
 /* ANIMAÇÕES */
@@ -780,13 +809,20 @@ footer {
         <img class="logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg" alt="Mesa de Saberes">
         <span>Mesa de Saberes</span>
       </div>
+      
+      <!-- ✅ LANGUAGE SWITCHER -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="pt" onclick="setLanguage('pt')">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+      </div>
+      
       <ul class="nav-links">
-        <li><a href="#hero">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#porque">Porquê</a></li>
-        <li><a href="#clientes">Clientes</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#hero" data-i18n="nav_home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
+        <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
+        <li><a href="#porque" data-i18n="nav_why">Porquê</a></li>
+        <li><a href="#clientes" data-i18n="nav_clients">Clientes</a></li>
+        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
       </ul>
       <button class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
@@ -801,31 +837,31 @@ footer {
     <div class="hero-logo">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi80BqLIEgPgKvALMz4bFvnnrGpdYDCFnFHQBAsphH2PJ8ll-OunVKF_Kr4AiEuCONPPxoh9F3rKUb9foh5-F_dzRzAQbVQyGoFwtxgqsRjIBrDNU-7aGsXfI9nqPCsuAWOAws_CITm3lY8C2pokSulVjvt-uBISanSuo2QTlSCt-yXCLDrj0CIGYWaEV0/s320/Logo%20Saberes%20de%20Mesa%20Quadrado.jpg" alt="Mesa de Saberes Logo">
     </div>
-    <h1>Saberes + Experiência + Inovação</h1>
-    <p>Transformamos restaurantes em negócios sustentáveis, rentáveis e memoráveis</p>
+    <h1 data-i18n="hero_title">Saberes + Experiência + Inovação</h1>
+    <p data-i18n="hero_subtitle">Transformamos restaurantes em negócios sustentáveis, rentáveis e memoráveis</p>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-number">40+</div>
-        <div class="stat-label">Anos de Experiência</div>
+        <div class="stat-label" data-i18n="stat_years">Anos de Experiência</div>
       </div>
       <div class="stat">
         <div class="stat-number">4</div>
-        <div class="stat-label">Países</div>
+        <div class="stat-label" data-i18n="stat_countries">Países</div>
       </div>
       <div class="stat">
         <div class="stat-number">360°</div>
-        <div class="stat-label">Abordagem</div>
+        <div class="stat-label" data-i18n="stat_approach">Abordagem</div>
       </div>
     </div>
     <div class="hero-cta">
-      <a href="#contacto" class="btn">Consultoria Grátis</a>
-      <a href="#servicos" class="btn btn-outline">Nossos Serviços</a>
+      <a href="#contacto" class="btn" data-i18n="btn_consultancy">Consultoria Grátis</a>
+      <a href="#servicos" class="btn btn-outline" data-i18n="btn_services">Nossos Serviços</a>
     </div>
     
     <!-- Blog Highlight -->
     <div class="blog-highlight">
       <i class="fas fa-rss"></i>
-      <span>Leia o nosso blog:</span>
+      <span data-i18n="blog_read">Leia o nosso blog:</span>
       <a href="https://substack.com/@mesadesaberes" target="_blank">Mesa de Saberes no Substack</a>
     </div>
     
@@ -848,30 +884,30 @@ footer {
 <!-- SOBRE -->
 <section class="sobre reveal" id="sobre">
   <div class="container">
-    <h2 class="section-title">Quem Somos</h2>
+    <h2 class="section-title" data-i18n="about_title">Quem Somos</h2>
     <div class="sobre-content">
-      <p>A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.</p>
+      <p data-i18n="about_text">A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.</p>
     </div>
     <div class="sobre-timeline">
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4>Portugal</h4>
-        <p>Mercado Principal</p>
+        <h4 data-i18n="country_pt">Portugal</h4>
+        <p data-i18n="country_pt_desc">Mercado Principal</p>
       </div>
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4>Espanha</h4>
-        <p>Expansão</p>
+        <h4 data-i18n="country_es">Espanha</h4>
+        <p data-i18n="country_es_desc">Expansão</p>
       </div>
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4>França</h4>
-        <p>Gastronomia</p>
+        <h4 data-i18n="country_fr">França</h4>
+        <p data-i18n="country_fr_desc">Gastronomia</p>
       </div>
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4>Brasil</h4>
-        <p>Mercado Emergente</p>
+        <h4 data-i18n="country_br">Brasil</h4>
+        <p data-i18n="country_br_desc">Mercado Emergente</p>
       </div>
     </div>
   </div>
@@ -880,50 +916,50 @@ footer {
 <!-- SERVIÇOS -->
 <section class="servicos reveal" id="servicos">
   <div class="container">
-    <h2 class="section-title">O Que Fazemos</h2>
+    <h2 class="section-title" data-i18n="services_title">O Que Fazemos</h2>
     <div class="servicos-grid">
       <div class="servico-card reveal">
         <i class="fas fa-chart-line"></i>
-        <h3>Operação & Gestão</h3>
-        <p>Otimização completa do seu restaurante</p>
+        <h3 data-i18n="service_ops_title">Operação & Gestão</h3>
+        <p data-i18n="service_ops_desc">Otimização completa do seu restaurante</p>
         <ul class="servico-lista">
-          <li>Estudo de mercado personalizado</li>
-          <li>Criação de ementas adaptadas</li>
-          <li>Fichas técnicas de produtos</li>
-          <li>Análise interna de falhas</li>
+          <li data-i18n="service_ops_1">Estudo de mercado personalizado</li>
+          <li data-i18n="service_ops_2">Criação de ementas adaptadas</li>
+          <li data-i18n="service_ops_3">Fichas técnicas de produtos</li>
+          <li data-i18n="service_ops_4">Análise interna de falhas</li>
         </ul>
       </div>
       <div class="servico-card reveal">
         <i class="fas fa-paint-brush"></i>
-        <h3>Imagem & Branding</h3>
-        <p>Identidade visual coerente e impactante</p>
+        <h3 data-i18n="service_brand_title">Imagem & Branding</h3>
+        <p data-i18n="service_brand_desc">Identidade visual coerente e impactante</p>
         <ul class="servico-lista">
-          <li>Desenvolvimento de logo</li>
-          <li>Identidade visual completa</li>
-          <li>Design de menus</li>
-          <li>Branding digital</li>
+          <li data-i18n="service_brand_1">Desenvolvimento de logo</li>
+          <li data-i18n="service_brand_2">Identidade visual completa</li>
+          <li data-i18n="service_brand_3">Design de menus</li>
+          <li data-i18n="service_brand_4">Branding digital</li>
         </ul>
       </div>
       <div class="servico-card reveal">
         <i class="fas fa-users"></i>
-        <h3>Formação & Equipas</h3>
-        <p>Capacitamos as equipas para excelência</p>
+        <h3 data-i18n="service_team_title">Formação & Equipas</h3>
+        <p data-i18n="service_team_desc">Capacitamos as equipas para excelência</p>
         <ul class="servico-lista">
-          <li>Formação contínua sala</li>
-          <li>Formação contínua cozinha</li>
-          <li>Desenvolvimento de lideranças</li>
-          <li>Cultura de excelência</li>
+          <li data-i18n="service_team_1">Formação contínua sala</li>
+          <li data-i18n="service_team_2">Formação contínua cozinha</li>
+          <li data-i18n="service_team_3">Desenvolvimento de lideranças</li>
+          <li data-i18n="service_team_4">Cultura de excelência</li>
         </ul>
       </div>
       <div class="servico-card reveal">
         <i class="fas fa-robot"></i>
-        <h3>IA & Inovação</h3>
-        <p>Tecnologia para o futuro da restauração</p>
+        <h3 data-i18n="service_tech_title">IA & Inovação</h3>
+        <p data-i18n="service_tech_desc">Tecnologia para o futuro da restauração</p>
         <ul class="servico-lista">
-          <li>Websites e apps</li>
-          <li>Redes sociais</li>
-          <li>Automação com IA</li>
-          <li>Produtos digitais</li>
+          <li data-i18n="service_tech_1">Websites e apps</li>
+          <li data-i18n="service_tech_2">Redes sociais</li>
+          <li data-i18n="service_tech_3">Automação com IA</li>
+          <li data-i18n="service_tech_4">Produtos digitais</li>
         </ul>
       </div>
     </div>
@@ -933,41 +969,41 @@ footer {
 <!-- PORQUE + VÍDEO -->
 <section class="porque reveal" id="porque">
   <div class="container">
-    <h2 class="section-title">Porque Nos Escolhem</h2>
+    <h2 class="section-title" data-i18n="why_title">Porque Nos Escolhem</h2>
     <div class="porque-grid">
       <div class="porque-item reveal">
         <i class="fas fa-gift"></i>
         <div>
-          <h3>Primeira Consultoria Grátis</h3>
-          <p>Sem compromisso. Avaliamos o seu negócio e apresentamos soluções personalizadas sem qualquer custo inicial.</p>
+          <h3 data-i18n="why_1_title">Primeira Consultoria Grátis</h3>
+          <p data-i18n="why_1_desc">Sem compromisso. Avaliamos o seu negócio e apresentamos soluções personalizadas sem qualquer custo inicial.</p>
         </div>
       </div>
       <div class="porque-item reveal">
         <i class="fas fa-award"></i>
         <div>
-          <h3>Experiência Comprovada</h3>
-          <p>Mais de 40 anos em diversos mercados e culturas gastronómicas. Conhecimento que faz a diferença.</p>
+          <h3 data-i18n="why_2_title">Experiência Comprovada</h3>
+          <p data-i18n="why_2_desc">Mais de 40 anos em diversos mercados e culturas gastronómicas. Conhecimento que faz a diferença.</p>
         </div>
       </div>
       <div class="porque-item reveal">
         <i class="fas fa-sync"></i>
         <div>
-          <h3>Abordagem 360º</h3>
-          <p>Desde a imagem até à operação diária. Cuidamos de todos os detalhes para o seu sucesso.</p>
+          <h3 data-i18n="why_3_title">Abordagem 360º</h3>
+          <p data-i18n="why_3_desc">Desde a imagem até à operação diária. Cuidamos de todos os detalhes para o seu sucesso.</p>
         </div>
       </div>
       <div class="porque-item reveal">
         <i class="fas fa-graduation-cap"></i>
         <div>
-          <h3>Formação à Medida</h3>
-          <p>Capacitamos as equipas para excelência. Programas personalizados para sala e cozinha.</p>
+          <h3 data-i18n="why_4_title">Formação à Medida</h3>
+          <p data-i18n="why_4_desc">Capacitamos as equipas para excelência. Programas personalizados para sala e cozinha.</p>
         </div>
       </div>
     </div>
     
     <!-- YouTube Video -->
     <div class="video-section reveal">
-      <h3>🎬 Conheça a Mesa de Saberes</h3>
+      <h3 data-i18n="video_title">🎬 Conheça a Mesa de Saberes</h3>
       <div class="video-container">
         <iframe 
           src="https://www.youtube.com/embed/26eVez2OisM?si=wPITXz6CPg0ePtr2" 
@@ -983,8 +1019,8 @@ footer {
 <!-- CLIENTES & PARTNERS CAROUSEL -->
 <section class="clientes reveal" id="clientes">
   <div class="container">
-    <h2 class="section-title">Clientes & Partners</h2>
-    <p style="text-align:center; color:#666; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
+    <h2 class="section-title" data-i18n="clients_title">Clientes & Partners</h2>
+    <p style="text-align:center; color:#666; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;" data-i18n="clients_subtitle">
       Orgulhamo-nos de colaborar com marcas de excelência na restauração
     </p>
     <div class="carousel-container">
@@ -1018,18 +1054,18 @@ footer {
 <!-- MISSÃO -->
 <section class="missao reveal">
   <div class="container">
-    <h2>Nossa Missão</h2>
-    <p>Transformar restaurantes em negócios sustentáveis, rentáveis e memoráveis – através do conhecimento, da imagem e da formação.</p>
+    <h2 data-i18n="mission_title">Nossa Missão</h2>
+    <p data-i18n="mission_text">Transformar restaurantes em negócios sustentáveis, rentáveis e memoráveis – através do conhecimento, da imagem e da formação.</p>
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section class="contacto reveal" id="contacto">
   <div class="container">
-    <h2 class="section-title">Contactos</h2>
+    <h2 class="section-title" data-i18n="contact_title">Contactos</h2>
     <div class="contacto-grid">
       <div class="contacto-info">
-        <h3>Entre em Contacto</h3>
+        <h3 data-i18n="contact_subtitle">Entre em Contacto</h3>
         <div class="contacto-item">
           <i class="fas fa-envelope"></i>
           <p>mesadesaberes@gmail.com</p>
@@ -1040,7 +1076,7 @@ footer {
         </div>
         <div class="contacto-item">
           <i class="fas fa-map-marker-alt"></i>
-          <p>Portugal (Atuação Internacional)</p>
+          <p data-i18n="contact_location">Portugal (Atuação Internacional)</p>
         </div>
         <div class="social-links">
           <a href="https://pt.pinterest.com/mdesaberes/" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
@@ -1058,37 +1094,37 @@ footer {
       </div>
       <div class="contacto-form">
         <!-- ✅ FORMULÁRIO FUNCIONAL COM FORMSPREE -->
-        <form action="https://formspree.io/f/xgopkpvd" method="POST">
+        <form action="https://formspree.io/f/SEU_FORM_ID_AQUI" method="POST">
           <div class="form-group">
-            <label>Nome</label>
+            <label data-i18n="form_name">Nome</label>
             <input type="text" name="name" required placeholder="Seu nome">
           </div>
           <div class="form-group">
-            <label>Email</label>
+            <label data-i18n="form_email">Email</label>
             <input type="email" name="email" required placeholder="Seu email">
           </div>
           <div class="form-group">
-            <label>Restaurante/Empresa</label>
+            <label data-i18n="form_company">Restaurante/Empresa</label>
             <input type="text" name="empresa" placeholder="Nome do estabelecimento">
           </div>
           <div class="form-group">
-            <label>Mensagem</label>
+            <label data-i18n="form_message">Mensagem</label>
             <textarea name="message" required placeholder="Como podemos ajudar?"></textarea>
           </div>
-          <button type="submit" class="btn" style="width:100%">Enviar Mensagem</button>
+          <button type="submit" class="btn" style="width:100%" data-i18n="form_submit">Enviar Mensagem</button>
         </form>
         
         <!-- ✅ SUBSTACK - LINK DIRETO (100% FUNCIONAL) -->
         <div class="substack-embed">
-          <h4>📰 Últimos Artigos no Blog</h4>
-          <p style="font-size:14px; color:#666; margin:15px 0 20px;">
+          <h4 data-i18n="blog_latest">📰 Últimos Artigos no Blog</h4>
+          <p style="font-size:14px; color:#666; margin:15px 0 20px;" data-i18n="blog_desc">
             Acompanha as nossas dicas, tendências e casos de sucesso na restauração.
           </p>
           <a href="https://substack.com/@mesadesaberes" target="_blank" class="btn">
-            <i class="fas fa-rss"></i> Visitar Blog Mesa de Saberes
+            <i class="fas fa-rss"></i> <span data-i18n="blog_visit">Visitar Blog Mesa de Saberes</span>
           </a>
           <p style="font-size:12px; color:#999; margin-top:15px;">
-            <i class="fas fa-external-link-alt"></i> Abre numa nova janela
+            <i class="fas fa-external-link-alt"></i> <span data-i18n="blog_newwindow">Abre numa nova janela</span>
           </p>
         </div>
       </div>
@@ -1102,20 +1138,20 @@ footer {
     <div class="footer-grid">
       <div class="footer-col">
         <h4>Mesa de Saberes</h4>
-        <p>Consultoria especializada em restauração com mais de 40 anos de experiência internacional.</p>
+        <p data-i18n="footer_desc">Consultoria especializada em restauração com mais de 40 anos de experiência internacional.</p>
       </div>
       <div class="footer-col">
-        <h4>Links Rápidos</h4>
+        <h4 data-i18n="footer_links">Links Rápidos</h4>
         <ul>
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#hero" data-i18n="nav_home">Início</a></li>
+          <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
+          <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
+          <li><a href="#clientes" data-i18n="nav_clients">Clientes</a></li>
+          <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Siga-nos</h4>
+        <h4 data-i18n="footer_follow">Siga-nos</h4>
         <div class="footer-social">
           <a href="https://pt.pinterest.com/mdesaberes/" target="_blank"><i class="fab fa-pinterest"></i></a>
           <a href="https://x.com/saberes51414" target="_blank">
@@ -1131,12 +1167,218 @@ footer {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Mesa de Saberes. Todos os direitos reservados.</p>
+      <p>&copy; 2026 Mesa de Saberes. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
     </div>
   </div>
 </footer>
 
 <script>
+// ✅ TRADUÇÕES PT/EN
+const translations = {
+  pt: {
+    nav_home: "Início",
+    nav_about: "Sobre",
+    nav_services: "Serviços",
+    nav_why: "Porquê",
+    nav_clients: "Clientes",
+    nav_contact: "Contacto",
+    hero_title: "Saberes + Experiência + Inovação",
+    hero_subtitle: "Transformamos restaurantes em negócios sustentáveis, rentáveis e memoráveis",
+    stat_years: "Anos de Experiência",
+    stat_countries: "Países",
+    stat_approach: "Abordagem",
+    btn_consultancy: "Consultoria Grátis",
+    btn_services: "Nossos Serviços",
+    blog_read: "Leia o nosso blog:",
+    about_title: "Quem Somos",
+    about_text: "A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.",
+    country_pt: "Portugal",
+    country_pt_desc: "Mercado Principal",
+    country_es: "Espanha",
+    country_es_desc: "Expansão",
+    country_fr: "França",
+    country_fr_desc: "Gastronomia",
+    country_br: "Brasil",
+    country_br_desc: "Mercado Emergente",
+    services_title: "O Que Fazemos",
+    service_ops_title: "Operação & Gestão",
+    service_ops_desc: "Otimização completa do seu restaurante",
+    service_ops_1: "Estudo de mercado personalizado",
+    service_ops_2: "Criação de ementas adaptadas",
+    service_ops_3: "Fichas técnicas de produtos",
+    service_ops_4: "Análise interna de falhas",
+    service_brand_title: "Imagem & Branding",
+    service_brand_desc: "Identidade visual coerente e impactante",
+    service_brand_1: "Desenvolvimento de logo",
+    service_brand_2: "Identidade visual completa",
+    service_brand_3: "Design de menus",
+    service_brand_4: "Branding digital",
+    service_team_title: "Formação & Equipas",
+    service_team_desc: "Capacitamos as equipas para excelência",
+    service_team_1: "Formação contínua sala",
+    service_team_2: "Formação contínua cozinha",
+    service_team_3: "Desenvolvimento de lideranças",
+    service_team_4: "Cultura de excelência",
+    service_tech_title: "IA & Inovação",
+    service_tech_desc: "Tecnologia para o futuro da restauração",
+    service_tech_1: "Websites e apps",
+    service_tech_2: "Redes sociais",
+    service_tech_3: "Automação com IA",
+    service_tech_4: "Produtos digitais",
+    why_title: "Porque Nos Escolhem",
+    why_1_title: "Primeira Consultoria Grátis",
+    why_1_desc: "Sem compromisso. Avaliamos o seu negócio e apresentamos soluções personalizadas sem qualquer custo inicial.",
+    why_2_title: "Experiência Comprovada",
+    why_2_desc: "Mais de 40 anos em diversos mercados e culturas gastronómicas. Conhecimento que faz a diferença.",
+    why_3_title: "Abordagem 360º",
+    why_3_desc: "Desde a imagem até à operação diária. Cuidamos de todos os detalhes para o seu sucesso.",
+    why_4_title: "Formação à Medida",
+    why_4_desc: "Capacitamos as equipas para excelência. Programas personalizados para sala e cozinha.",
+    video_title: "🎬 Conheça a Mesa de Saberes",
+    clients_title: "Clientes & Partners",
+    clients_subtitle: "Orgulhamo-nos de colaborar com marcas de excelência na restauração",
+    mission_title: "Nossa Missão",
+    mission_text: "Transformar restaurantes em negócios sustentáveis, rentáveis e memoráveis – através do conhecimento, da imagem e da formação.",
+    contact_title: "Contactos",
+    contact_subtitle: "Entre em Contacto",
+    contact_location: "Portugal (Atuação Internacional)",
+    form_name: "Nome",
+    form_email: "Email",
+    form_company: "Restaurante/Empresa",
+    form_message: "Mensagem",
+    form_submit: "Enviar Mensagem",
+    blog_latest: "📰 Últimos Artigos no Blog",
+    blog_desc: "Acompanha as nossas dicas, tendências e casos de sucesso na restauração.",
+    blog_visit: "Visitar Blog Mesa de Saberes",
+    blog_newwindow: "Abre numa nova janela",
+    footer_desc: "Consultoria especializada em restauração com mais de 40 anos de experiência internacional.",
+    footer_links: "Links Rápidos",
+    footer_follow: "Siga-nos",
+    footer_rights: "Todos os direitos reservados."
+  },
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_services: "Services",
+    nav_why: "Why Us",
+    nav_clients: "Clients",
+    nav_contact: "Contact",
+    hero_title: "Knowledge + Experience + Innovation",
+    hero_subtitle: "We transform restaurants into sustainable, profitable and memorable businesses",
+    stat_years: "Years of Experience",
+    stat_countries: "Countries",
+    stat_approach: "Approach",
+    btn_consultancy: "Free Consultancy",
+    btn_services: "Our Services",
+    blog_read: "Read our blog:",
+    about_title: "About Us",
+    about_text: "<strong>Mesa de Saberes</strong> is a consultancy specialized in the restaurant sector. With a consolidated presence in <strong>Portugal, Spain, France and Brazil</strong>, we bring together over <strong>40 years of experience</strong> in all critical areas of the business: from image and visual identity, to operational management, training and team development.",
+    country_pt: "Portugal",
+    country_pt_desc: "Main Market",
+    country_es: "Spain",
+    country_es_desc: "Expansion",
+    country_fr: "France",
+    country_fr_desc: "Gastronomy",
+    country_br: "Brazil",
+    country_br_desc: "Emerging Market",
+    services_title: "What We Do",
+    service_ops_title: "Operations & Management",
+    service_ops_desc: "Complete optimization of your restaurant",
+    service_ops_1: "Personalized market study",
+    service_ops_2: "Menu creation adapted to concept",
+    service_ops_3: "Technical sheets for all products",
+    service_ops_4: "Internal analysis for improvements",
+    service_brand_title: "Image & Branding",
+    service_brand_desc: "Coherent and impactful visual identity",
+    service_brand_1: "Logo development",
+    service_brand_2: "Complete visual identity",
+    service_brand_3: "Menu design",
+    service_brand_4: "Digital branding",
+    service_team_title: "Training & Teams",
+    service_team_desc: "We empower teams for excellence",
+    service_team_1: "Continuous front-of-house training",
+    service_team_2: "Continuous kitchen training",
+    service_team_3: "Leadership development",
+    service_team_4: "Culture of excellence",
+    service_tech_title: "AI & Innovation",
+    service_tech_desc: "Technology for the future of restaurants",
+    service_tech_1: "Websites and apps",
+    service_tech_2: "Social media",
+    service_tech_3: "AI automation",
+    service_tech_4: "Digital products",
+    why_title: "Why Choose Us",
+    why_1_title: "First Consultancy Free",
+    why_1_desc: "No commitment. We evaluate your business and present personalized solutions at no initial cost.",
+    why_2_title: "Proven Experience",
+    why_2_desc: "Over 40 years in diverse markets and gastronomic cultures. Knowledge that makes the difference.",
+    why_3_title: "360º Approach",
+    why_3_desc: "From image to daily operations. We take care of all details for your success.",
+    why_4_title: "Tailored Training",
+    why_4_desc: "We empower teams for excellence. Personalized programs for front-of-house and kitchen.",
+    video_title: "🎬 Get to Know Mesa de Saberes",
+    clients_title: "Clients & Partners",
+    clients_subtitle: "We are proud to collaborate with excellence brands in the restaurant industry",
+    mission_title: "Our Mission",
+    mission_text: "Transform restaurants into sustainable, profitable and memorable businesses – through knowledge, image and training.",
+    contact_title: "Contact",
+    contact_subtitle: "Get in Touch",
+    contact_location: "Portugal (International Operations)",
+    form_name: "Name",
+    form_email: "Email",
+    form_company: "Restaurant/Company",
+    form_message: "Message",
+    form_submit: "Send Message",
+    blog_latest: "📰 Latest Blog Articles",
+    blog_desc: "Follow our tips, trends and success stories in the restaurant industry.",
+    blog_visit: "Visit Mesa de Saberes Blog",
+    blog_newwindow: "Opens in a new window",
+    footer_desc: "Specialized consultancy in restaurants with over 40 years of international experience.",
+    footer_links: "Quick Links",
+    footer_follow: "Follow Us",
+    footer_rights: "All rights reserved."
+  }
+};
+
+// ✅ FUNÇÃO PARA MUDAR LÍNGUA
+function setLanguage(lang) {
+  // Guardar preferência
+  localStorage.setItem('mesa_saberes_lang', lang);
+  
+  // Atualizar atributo HTML
+  document.documentElement.lang = lang;
+  
+  // Atualizar todos os elementos com data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      if (element.innerHTML.includes('<')) {
+        element.innerHTML = translations[lang][key];
+      } else {
+        element.textContent = translations[lang][key];
+      }
+    }
+  });
+  
+  // Atualizar botões de língua
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    }
+  });
+  
+  // Atualizar título da página
+  document.title = lang === 'pt' 
+    ? 'Mesa de Saberes | Consultoria para Restaurantes' 
+    : 'Mesa de Saberes | Restaurant Consultancy';
+}
+
+// ✅ CARREGAR LÍNGUA GUARDADA AO INICIAR
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('mesa_saberes_lang') || 'pt';
+  setLanguage(savedLang);
+});
+
 // ✅ SCROLL REVEAL ANIMATION
 const revealElements = document.querySelectorAll('.reveal');
 
