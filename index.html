@@ -324,27 +324,35 @@ nav {
   line-height: 1.9;
 }
 .sobre-timeline {
- <div class="timeline-item reveal">
-    <i class="fas fa-flag"></i>
-    <h4 data-i18n="country_pt">Portugal</h4>
-    <p data-i18n="country_pt_desc">Mercado Principal</p>
-  </div>
-  <div class="timeline-item reveal">
-    <i class="fas fa-flag"></i>
-    <h4 data-i18n="country_es">Espanha</h4>
-    <p data-i18n="country_es_desc">Expansão</p>
-  </div>
-  <div class="timeline-item reveal">
-    <i class="fas fa-flag"></i>
-    <h4 data-i18n="country_de">Alemanha</h4>
-    <p data-i18n="country_de_desc">Experiência Internacional</p>
-  </div>
-  <div class="timeline-item reveal">
-    <i class="fas fa-flag"></i>
-    <h4 data-i18n="country_uk">Inglaterra</h4>
-    <p data-i18n="country_uk_desc">Mercado Europeu</p>
-  </div>
-</div>
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 60px;
+}
+.timeline-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  border-bottom: 4px solid var(--dourado);
+}
+.timeline-item:hover { transform: translateY(-8px); box-shadow: 0 10px 35px rgba(0,0,0,0.15); }
+.timeline-item i {
+  font-size: 36px;
+  color: var(--dourado);
+  margin-bottom: 15px;
+}
+.timeline-item h4 {
+  font-size: 18px;
+  color: var(--verde-floresta);
+  margin-bottom: 8px;
+}
+.timeline-item p {
+  font-size: 13px;
+  color: #777;
+}
 
 /* SERVIÇOS */
 .servicos {
@@ -878,7 +886,7 @@ footer {
   <div class="container">
     <h2 class="section-title" data-i18n="about_title">Quem Somos</h2>
     <div class="sobre-content">
-      <p data-i18n="about_text">A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.</p>
+      <p data-i18n="about_text">A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, Alemanha e Inglaterra</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.</p>
     </div>
     <div class="sobre-timeline">
       <div class="timeline-item reveal">
@@ -893,13 +901,13 @@ footer {
       </div>
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4 data-i18n="country_fr">França</h4>
-        <p data-i18n="country_fr_desc">Gastronomia</p>
+        <h4 data-i18n="country_de">Alemanha</h4>
+        <p data-i18n="country_de_desc">Experiência Internacional</p>
       </div>
       <div class="timeline-item reveal">
         <i class="fas fa-flag"></i>
-        <h4 data-i18n="country_br">Brasil</h4>
-        <p data-i18n="country_br_desc">Mercado Emergente</p>
+        <h4 data-i18n="country_uk">Inglaterra</h4>
+        <p data-i18n="country_uk_desc">Mercado Europeu</p>
       </div>
     </div>
   </div>
@@ -1183,15 +1191,15 @@ const translations = {
     btn_services: "Nossos Serviços",
     blog_read: "Leia o nosso blog:",
     about_title: "Quem Somos",
-    about_text: "A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, França e Brasil</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.",
+    about_text: "A <strong>Mesa de Saberes</strong> é uma consultoria especializada no setor da restauração. Com uma presença consolidada em <strong>Portugal, Espanha, Alemanha e Inglaterra</strong>, reunimos mais de <strong>40 anos de experiência</strong> em todas as áreas críticas do negócio: desde a imagem e identidade visual, até à gestão operacional, formação e desenvolvimento de equipas.",
     country_pt: "Portugal",
     country_pt_desc: "Mercado Principal",
     country_es: "Espanha",
     country_es_desc: "Expansão",
-    country_fr: "França",
-    country_fr_desc: "Gastronomia",
-    country_br: "Brasil",
-    country_br_desc: "Mercado Emergente",
+    country_de: "Alemanha",
+    country_de_desc: "Experiência Internacional",
+    country_uk: "Inglaterra",
+    country_uk_desc: "Mercado Europeu",
     services_title: "O Que Fazemos",
     service_ops_title: "Operação & Gestão",
     service_ops_desc: "Otimização completa do seu restaurante",
@@ -1264,15 +1272,15 @@ const translations = {
     btn_services: "Our Services",
     blog_read: "Read our blog:",
     about_title: "About Us",
-    about_text: "<strong>Mesa de Saberes</strong> is a consultancy specialized in the restaurant sector. With a consolidated presence in <strong>Portugal, Spain, France and Brazil</strong>, we bring together over <strong>40 years of experience</strong> in all critical areas of the business: from image and visual identity, to operational management, training and team development.",
+    about_text: "<strong>Mesa de Saberes</strong> is a consultancy specialized in the restaurant sector. With a consolidated presence in <strong>Portugal, Spain, Germany and England</strong>, we bring together over <strong>40 years of experience</strong> in all critical areas of the business: from image and visual identity, to operational management, training and team development.",
     country_pt: "Portugal",
     country_pt_desc: "Main Market",
     country_es: "Spain",
     country_es_desc: "Expansion",
-    country_fr: "France",
-    country_fr_desc: "Gastronomy",
-    country_br: "Brazil",
-    country_br_desc: "Emerging Market",
+    country_de: "Germany",
+    country_de_desc: "International Experience",
+    country_uk: "England",
+    country_uk_desc: "European Market",
     services_title: "What We Do",
     service_ops_title: "Operations & Management",
     service_ops_desc: "Complete optimization of your restaurant",
@@ -1333,13 +1341,9 @@ const translations = {
 
 // ✅ FUNÇÃO PARA MUDAR LÍNGUA
 function setLanguage(lang) {
-  // Guardar preferência
   localStorage.setItem('mesa_saberes_lang', lang);
-  
-  // Atualizar atributo HTML
   document.documentElement.lang = lang;
   
-  // Atualizar todos os elementos com data-i18n
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key]) {
@@ -1351,7 +1355,6 @@ function setLanguage(lang) {
     }
   });
   
-  // Atualizar botões de língua
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
     if (btn.getAttribute('data-lang') === lang) {
@@ -1359,7 +1362,6 @@ function setLanguage(lang) {
     }
   });
   
-  // Atualizar título da página
   document.title = lang === 'pt' 
     ? 'Mesa de Saberes | Consultoria para Restaurantes' 
     : 'Mesa de Saberes | Restaurant Consultancy';
@@ -1373,7 +1375,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ✅ SCROLL REVEAL ANIMATION
 const revealElements = document.querySelectorAll('.reveal');
-
 const revealOnScroll = () => {
   const windowHeight = window.innerHeight;
   revealElements.forEach(el => {
@@ -1383,14 +1384,12 @@ const revealOnScroll = () => {
     }
   });
 };
-
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 // Mobile Menu
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
-
 mobileMenuBtn.addEventListener('click', () => {
   navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
   navLinks.style.flexDirection = 'column';
@@ -1414,7 +1413,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ✅ PWA: Service Worker Registration
+// PWA Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
